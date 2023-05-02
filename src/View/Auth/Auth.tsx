@@ -1,7 +1,10 @@
 import React from 'react';
 import {Image, Text, View, StyleSheet} from 'react-native';
+import {Button} from './components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 export const Auth = () => {
+  const navigation = useNavigation();
   return (
     <View style={Style.container}>
       <Image
@@ -12,6 +15,8 @@ export const Auth = () => {
         <Text style={Style.headingOne}>Clean Home</Text>
         <Text style={Style.headingtwo}>Clean Life</Text>
       </View>
+      <Button title="Login" onPress={() => navigation.navigate('Login')} />
+      <Button title="Sign Up" onPress={() => navigation.navigate('SignUp')} />
     </View>
   );
 };
@@ -23,6 +28,7 @@ const Style = StyleSheet.create({
   },
   textView: {
     alignSelf: 'center',
+    marginBottom: 25,
   },
   headingOne: {
     fontSize: 20,
