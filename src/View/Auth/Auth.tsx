@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, Text, View, StyleSheet} from 'react-native';
-import {Button} from './components/Button';
+import {Button} from '../Components/Button';
 import {useNavigation} from '@react-navigation/native';
 
 export const Auth = () => {

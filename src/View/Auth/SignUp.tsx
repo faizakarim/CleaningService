@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import {Button} from './components/Button';
-import AppInput from './components/AppInput';
+import {Button} from '../Components/Button';
+import AppInput from '../Components/AppInput';
+import {Picker} from '@react-native-picker/picker';
+import {useNavigation} from '@react-navigation/native';
 
 export const SignUp = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState();
+  const navigation = useNavigation();
   return (
     <View style={style.container}>
       <Image
@@ -19,7 +23,25 @@ export const SignUp = () => {
         <AppInput />
         <Text style={style.text}>Password</Text>
         <AppInput />
-        <Button title="Create Account" />
+        <Text style={style.text}>Looking for</Text>
+        <Picker
+          selectedValue={selectedLanguage}
+          style={{
+            backgroundColor: 'red',
+            borderRadius: 10,
+            borderWidth: 1,
+            borderColor: '#CAD5E2',
+          }}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedLanguage(itemValue)
+          }>
+          <Picker.Item label="looking for job" value="1" />
+          <Picker.Item label="lookin for employee" value="2" />
+        </Picker>
+        <Button
+          title="Create Account"
+          onPress={() => navigation.navigate('homescreen')}
+        />
       </View>
     </View>
   );

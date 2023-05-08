@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import AppInput from './components/AppInput';
-import {Button} from './components/Button';
+import AppInput from '../Components/AppInput';
+import {Button} from '../Components/Button';
 
 export const Login = () => {
   return (

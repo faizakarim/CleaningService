@@ -33,6 +33,13 @@ export const RootStack = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="homescreen"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
